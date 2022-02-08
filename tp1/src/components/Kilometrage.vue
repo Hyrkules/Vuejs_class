@@ -6,19 +6,27 @@
     <br>
     <input type="text" v-model="date" /> Date de naissance
     <br>
-    <input type="text" v-model="place" /> Lieu
-    <button @click="showpage">Incrémenter</button>
+    <input type="text" v-model="email" /> Lieu
+    <br>
+    <button type="button" v-on:click="goto()">Valider</button>
   </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
-import { Value } from './Values.vue';
 
 export default defineComponent({
-  data: () => {
+  data:() => {
     return {
-      Values
+    nom: "",
+    prenom: "",
+    date: "",
+    email: "",
+    }
+  },
+ methods : {
+    goto(){
+      window.location.href = 'accueil'
     }
   }
 });
